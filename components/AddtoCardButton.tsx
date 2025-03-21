@@ -3,7 +3,7 @@ import { Product } from '@/sanity.types'
 import React from 'react'
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
-import QuantityButton from './ui/QuantityButton';
+import QuantityButton from './QuantityButton';
 import FormatedPrice from './FormatedPrice';
 
 interface Props{
@@ -23,7 +23,7 @@ function AddtoCardButton({product}:Props) {
                         <h1 >
                             Quantity
                         </h1>
-                        <QuantityButton product = {product}/>
+                        <QuantityButton />
                     </div>
 
                     <div className='flex justify-between mt-3 pt-2 border-t'>
