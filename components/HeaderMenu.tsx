@@ -1,5 +1,5 @@
 "use client";
-import HeaderMenuData from "@/constant/HeaderMenuData";
+import { HeaderMenuData } from "@/constant";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";

@@ -3,10 +3,11 @@ import React, { FC } from "react";
 import { motion } from "motion/react";
 import Logo from "./Logo";
 import { X } from "lucide-react";
-import HeaderMenuData from "@/constant/HeaderMenuData";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SocialMedia from "./SocialMedia";
+import { HeaderMenuData } from "@/constant";
 
 interface sideBarProps {
   isOpen: boolean;
@@ -24,7 +25,7 @@ const SideBar: FC<sideBarProps> = ({ isOpen, onClose }) => {
       <motion.div className="min-w-72 max-w-96 bg-darkColor h-full p-10 border-r border-r-white ">
         <div className="text-white flex justify-between  items-center">
           <button onClick={onClose}>
-            <Logo className="text-white font-bold">Amazona</Logo>
+            <Logo className="text-white font-extrabold italic ">Shynzo</Logo>
           </button>
           <button className="hoverEffect cursor-pointer" onClick={onClose}>
             <X className=" hoverEffect hover:text-red-400" />

@@ -7,8 +7,8 @@ function HomeBanner() {
       <Title className="text-3xl text-center md:text-4xl uppercase font-bold">
         Best clothing collection
       </Title>
-      <p className="text-lightColor text-sm text-center mt-2 max-w-[480px]">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet consequatur quae ad blanditiis, fugiat repudiandae suscipit officia nostrum ipsa illo, excepturi dolore obcaecati nam earum!
+      <p className="text-lightColor text-sm text-center mt-4 max-w-[480px]">
+      Find everything you need to look and feel your best, and shop the latest men fashion and lifestyle products.
       </p>
     </div>
   );

@@ -12,7 +12,7 @@ import { ListIcon } from "lucide-react";
 
 async function Header() {
   const user = await currentUser();
-  console.log(user);
+  
   return (
     <header className="border-b ">
       <Container className="flex py-5  justify-between items-center text-lightColor  ">
@@ -22,7 +22,7 @@ async function Header() {
         <div className="flex   w-full lg:w-1/2 justify-between">
           <div className="w-auto  flex items-center justify-center gap-2.5">
             <MobileMenu />
-            <Logo className=" lg:text-2xl font-bold italic">Amazona</Logo>
+            <Logo className=" lg:text-2xl font-extrabold italic ">Shynzo </Logo>
           </div>
 
           <div className="w-auto  flex  items-center justify-end gap-5">
