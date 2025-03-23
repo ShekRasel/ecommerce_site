@@ -14,7 +14,7 @@ function ProductCard({ product }: { product: Product }) {
     <div className="border pb-5  rounded-lg group">
       <div className=" overflow-hidden  bg-zinc-100 relative   border-red-500 ">
         {product?.images && (
-          <Link href={`/productsPage/${product?.slug?.current}`}>
+          <Link href={`/products/${product?.slug?.current}`}>
             <Image
               src={urlFor(product?.images[0]).url()}
               height={500}
