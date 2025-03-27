@@ -8,8 +8,7 @@ import PriceView from "./PriceView";
 import AddtoCardButton from "./AddtoCardButton";
 
 function ProductCard({ product }: { product: Product }) {
-  console.log('product',product);
-  console.log('slug',product.slug)
+  
   return (
     <div className="border pb-5  rounded-lg group">
       <div className=" overflow-hidden  bg-zinc-100 relative   border-red-500 ">
