@@ -12,10 +12,10 @@ interface Props{
 
 function AddtoCardButton({product}:Props) {
     const isOutStock = product?.stock === 0;
-    const itemCount = 2;
+    const itemCount = 0;
 
   return (
-    <div>
+    <div className='w-full'>
         {
             itemCount ? (
                 <div className='text-sm'>
