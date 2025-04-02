@@ -14,7 +14,7 @@ async function Header() {
   const user = await currentUser();
   
   return (
-    <header className="border-b ">
+    <header className="border-b sticky top-0 bg-white z-50">
       <Container className="flex py-5  justify-between items-center text-lightColor  ">
         <div className=" w-1/2 hidden lg:block">
           <HeaderMenu />
