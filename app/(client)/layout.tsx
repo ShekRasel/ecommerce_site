@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-
+// import { ToastContainer } from 'react-toastify';
+import  { Toaster } from 'react-hot-toast';
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
@@ -35,6 +36,14 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          {/* <ToastContainer/> */}
+          <Toaster position="bottom-right" toastOptions={{
+            style : {
+              background : '#000000',
+              color : '#ffffff'
+            }
+          }}/>
+          
         </body>
       </html>
     </ClerkProvider>
