@@ -1,8 +1,11 @@
+'use client'
+import useCartStore from "@/store";
 import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 function CartItem() {
+  const {items} = useCartStore();
   return (
     <Link href={"/cart"} className=" relative group hoverEffect  ">
       <ShoppingBag className="w-5 group-hover:text-black hoverEffect" />
@@ -11,7 +14,7 @@ function CartItem() {
           className=" text-white
           "
         >
-          0
+         {items.length ? items.length : 0}
         </span>
       </div>
     </Link>
