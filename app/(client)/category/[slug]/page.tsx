@@ -5,7 +5,7 @@ import { getAllCategories } from "@/sanity/helpers/queries";
 import React from "react";
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
-    console.log( await params)
+   
     const {slug} = await params;
     const categories =  await getAllCategories();
     return (

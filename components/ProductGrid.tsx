@@ -28,7 +28,7 @@ function ProductGrid() {
         const response = await client.fetch(query, param);
         setProduct(await response);
       } catch (error) {
-        console.log(error);
+        console.error('error feching with query',error);
       } finally {
         setLoading(false);
       }

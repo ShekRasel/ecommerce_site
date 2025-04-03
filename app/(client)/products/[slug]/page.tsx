@@ -15,7 +15,7 @@ const singleProduct = async ({
 }) => {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
-  console.log(product);
+
 
   if (!product) {
     return notFound();
