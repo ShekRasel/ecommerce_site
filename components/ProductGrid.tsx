@@ -59,7 +59,7 @@ function ProductGrid() {
             ))}
             </div>
           ) : (
-            <NoProduct selectedTab= {selectedTab}/>
+            <NoProduct selectedTab= {selectedTab} className = {'mt-10'}/>
           )}
         </>
       )}
