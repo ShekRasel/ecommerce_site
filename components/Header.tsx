@@ -9,15 +9,19 @@ import { SignInButton, ClerkLoaded, SignedIn, UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { ListIcon } from "lucide-react";
+import { getAllCategories } from "@/sanity/helpers/queries";
 
 async function Header() {
   const user = await currentUser();
+
+  const categories = await getAllCategories();
+  
   
   return (
     <header className="border-b sticky top-0 bg-white z-50">
       <Container className="flex py-5  justify-between items-center text-lightColor  ">
         <div className=" w-1/2 hidden lg:block">
-          <HeaderMenu />
+          <HeaderMenu categories={categories}/>
         </div>
         <div className="flex   w-full lg:w-1/2 justify-between">
           <div className="w-auto  flex items-center justify-center gap-2.5">
