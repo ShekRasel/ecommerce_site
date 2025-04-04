@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "npm install --platform=linux --arch=x64 && next build",
     "start": "next start",
     "lint": "next lint",
     "typegen": "npx sanity@latest schema extract && npx sanity@latest typegen generate"
@@ -51,6 +51,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
+    "lightningcss": "^1.29.3",
     "typescript": "^5"
   }
 }
