@@ -11,9 +11,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     return (
     <Container className="py-10 font-sans">
       <Title>
-        Product by Category <span className="font-bold text-green-600 capitalize tracking-wide">
-            {slug && slug}
-        </span>
+        Product by Category 
       </Title>
       <CategoryProduct categories = {categories} slug= {slug}/>
     </Container>
