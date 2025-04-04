@@ -1,4 +1,5 @@
 "use client";
+
 import Container from "@/components/Container";
 import EmptyCart from "@/components/EmptyCart";
 import FormatedPrice from "@/components/FormatedPrice";
