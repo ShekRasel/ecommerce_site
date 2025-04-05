@@ -1,5 +1,5 @@
 import { productType } from '@/constant';
-// import { Repeat } from 'lucide-react';
+import { Repeat } from 'lucide-react';
 import React from 'react'
 
 interface Props {
@@ -18,9 +18,9 @@ function HomeTabBar({selectedTab , onTabSelect} : Props) {
               </button>
             ))}
         </div>
-        {/* <button className='border border-darkColor p-2 rounded-full hover:bg-black hover:text-white hoverEffect'>
+        <button className='border hidden md:block border-darkColor p-2 rounded-full hover:bg-black hover:text-white hoverEffect'>
             <Repeat className='w-5 h-5'/>
-        </button> */}
+        </button>
     </div>
   )
 }
