@@ -25,7 +25,7 @@ async function Header() {
         </div>
         <div className="flex   w-full lg:w-1/2 justify-between">
           <div className="w-auto  flex items-center justify-center gap-2.5">
-            <MobileMenu />
+            <MobileMenu categories={categories}/>
             <Logo className=" lg:text-2xl font-extrabold italic ">Shynzo </Logo>
           </div>
 
