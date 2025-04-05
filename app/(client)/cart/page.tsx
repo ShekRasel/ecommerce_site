@@ -82,7 +82,7 @@ const CartPage = () => {
                           key={product?._id}
                           className="border-b p-2.5 last:border-b-0 flex items-center justify-between gap-5 "
                         >
-                          <div className="flex flex-1 items-center gap-2 h-36 md:h-44">
+                          <div className="flex flex-1 items-center gap-2  md:h-44">
                             {product?.images && (
                               <Link
                                 href={`/products/${product?.slug?.current}`}
@@ -104,21 +104,21 @@ const CartPage = () => {
                                 <h2 className="font-semibold line-clamp-1">
                                   {product?.name}
                                 </h2>
-                                <p className="text-sm text-lightColor font-medium">
+                                <p className="text-sm line-clamp-3 md:line-clamp-6 text-lightColor font-medium">
                                   {product?.intro}
                                 </p>
-                                <p className="text-sm capitalize">
+                                <p className="text-sm font-bold capitalize">
                                   Variant: <span>{product.variants}</span>
                                 </p>
                                 <p className="font-semibold">
                                   Status: <span>{product?.status}</span>
                                 </p>
                               </div>
-                              <div className="text-gray-500 flex items-center gap-2">
+                              <div className="text-gray-500 mt-8 md:mt-0 flex items-center md:gap-0 gap-4">
                                 <TooltipProvider>
                                   <Tooltip>
                                     <TooltipTrigger>
-                                      <Heart className="w-4 h-4 md:w-5 md:h-5 hover:text-green-600 hoverEffect" />
+                                      <Heart className="w-5 h-5 hover:text-green-600 hoverEffect" />
                                       <TooltipContent className="font-bold">
                                         Add to Favorite
                                       </TooltipContent>
@@ -128,7 +128,7 @@ const CartPage = () => {
                                   <Tooltip>
                                     <TooltipTrigger>
                                       <Trash
-                                        className="w-4 cursor-pointer h-4 md:w-5 md:h-5 hover:text-red-600 hoverEffect"
+                                        className=" cursor-pointer w-5 h-5 hover:text-red-600 hoverEffect"
                                         onClick={() =>
                                           handleDeleteProduct(product?._id)
                                         }
@@ -142,7 +142,7 @@ const CartPage = () => {
                               </div>
                             </div>
                             <div className="flex flex-col  items-start justify-between h-36  md:h-44 p-0.5 md:p-1">
-                              <FormatedPrice amount={(product?.price as number) * itemCount} className="font-bold text-lg"/>
+                              <FormatedPrice amount={(product?.price as number) * itemCount} className="font-bold md:text-lg"/>
                               <QuantityButton product={product}/>
                             </div>
                           </div>
@@ -155,8 +155,8 @@ const CartPage = () => {
                 </div>
 
                 {/* summary */}
-                <div className="lg:col-span-1">
-                  <div className="hidden md:block w-full bg-white p-6 rounded-lg border">
+                <div className="lg:col-span-1 mt-4 md:mt-0">
+                  <div className=" md:block w-full bg-white p-6 rounded-lg border">
                     <h1 className="text-xl "> Order Summary</h1>
                     <div className="space-y-4">
                       <div className="flex justify-between">
