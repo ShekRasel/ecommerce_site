@@ -1,6 +1,6 @@
 'use client'
 import { Product } from "@/sanity.types";
-import { ArrowBigUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import React, { useState } from "react";
 
 interface Props {
@@ -10,14 +10,12 @@ interface Props {
 const ProductCharacteristics = ({ product }: Props) => {
   const [characteristics, setIsCharacteristics] = useState(false);
   return (
-    <div className="mt-10">
-      <div className="flex  items-center">
-        <p className="pr-15 text-darkcolor font-semibold ">{product.name}</p>
-        <span className="" onClick={()=>setIsCharacteristics(!characteristics)}>
-          <ArrowBigUp className={`${characteristics ? 'rotate-180 hoverEffect':''}`}/>
-        </span>
-       </div>
-        {characteristics && (<div className="flex justify-between mt-5">
+    <div className="mt-8 rounded-2xl border border-black/10 bg-white px-5 py-4">
+      <button className="flex w-full items-center justify-between text-left" onClick={()=>setIsCharacteristics(!characteristics)}>
+        <span className="font-semibold">Product details</span>
+        <ChevronDown className={`size-5 transition ${characteristics ? 'rotate-180':''}`}/>
+      </button>
+      {characteristics && (<div className="mt-5 flex justify-between border-t border-black/5 pt-5">
             <div className="text-gray-500 text-sm flex flex-col gap-1.5">
                 <h2>Brand</h2>
                 <h2>Collection</h2>

@@ -44,7 +44,7 @@ function AddtoCardButton({ product }: Props) {
           }}
           disabled={isOutStock}
           className={cn(
-            "w-full bg-white text-black border-darkColor border  hover:bg-black hover:text-white hoverEffect cursor-pointer"
+            "h-11 w-full cursor-pointer rounded-full border border-neutral-950 bg-neutral-950 text-white shadow-none transition hover:bg-amber-700 hover:text-white"
           )}
         >
           Add to Cart

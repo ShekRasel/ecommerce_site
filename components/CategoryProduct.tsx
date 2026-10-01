@@ -38,15 +38,15 @@ const CategoryProduct = ({categories,slug} : Props) => {
         fetchProducts(currentSlug)
     },[currentSlug])
   return (
-    <div className='py-5 flex flex-col md:flex-row items-start gap-5'>
-        <div className='flex flex-col md:min-w-40 border'>
+    <div className='flex flex-col items-start gap-8 py-8 md:flex-row'>
+        <div className='flex w-full gap-2 overflow-x-auto md:w-auto md:min-w-48 md:flex-col'>
             
             {categories?.map((item)=>(
                 <Button key={item?._id}
                 onClick={()=>setCurrentSlug(item?.slug?.current as string)}
-                className={`bg-transparent border-0 rounded-none text-darkColor shadow-none hover:bg-black font-semibold hoverEffect hover:text-white border-b last:border-b-0 
+                className={`h-11 shrink-0 rounded-full border border-black/10 bg-white px-5 text-neutral-700 shadow-none hover:bg-neutral-950 font-semibold hover:text-white md:justify-start
                 
-                ${item?.slug?.current === currentSlug && 'bg-darkColor text-white border-darkColor'}
+                ${item?.slug?.current === currentSlug && 'border-neutral-950 bg-neutral-950 text-white'}
                 
                 `}>
                     {item.title}
@@ -56,18 +56,18 @@ const CategoryProduct = ({categories,slug} : Props) => {
              </div>
         <div className='w-full'>
         {loading ? (
-        <div className="flex flex-col items-center justify-center py-10 text-center bg-gray-100 rounded-lg w-full mt-10 space-y-4 min-h-80 text-xl font-semibold">
-          <div className="flex gap-2 text-blue-600">
+        <div className="surface flex min-h-80 w-full flex-col items-center justify-center space-y-4 py-10 text-center">
+          <div className="flex gap-2 text-sm font-semibold text-amber-700">
             <span>
               <Loader2 className="animate-spin"/>
             </span>
-            <span >Product is loading</span>
+            <span>Curating products...</span>
           </div>
         </div>
       ) : (
         <>
           {products?.length ? (
-            <div className="grid md:grid-cols-2  lg:grid-cols-3 w-full items-center justify-center  gap-5 md:gap-8">
+            <div className="grid w-full grid-cols-2 items-stretch gap-3 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {products?.map((product: Product) => (
               <div key={product?._id} className="">
                 <ProductCard product={product} />

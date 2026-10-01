@@ -9,8 +9,8 @@ interface Props {
 
 function Logo({children, className} : Props) {
   return (
-    <Link href={'/'}  className = {cn('text-xl tracking-wider   text-darkColor',className)}>
-      {children}
+    <Link href={'/'} aria-label="Shynzo home" className = {cn('inline-flex items-center text-xl font-black tracking-[-0.04em] text-neutral-950',className)}>
+      <span className="mr-2 inline-block size-2.5 rounded-full bg-amber-600" />{children}
     </Link>
   )
 }

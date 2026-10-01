@@ -1,5 +1,4 @@
 import { productType } from '@/constant';
-import { Repeat } from 'lucide-react';
 import React from 'react'
 
 interface Props {
@@ -8,19 +7,17 @@ interface Props {
 }
 function HomeTabBar({selectedTab , onTabSelect} : Props) {
   return (
-    <div className='flex gap-1.5 font-semibold justify-center items-center'>
-        <div className='gap-1.5 grid grid-cols-4 md:grid-cols-5 justify-center items-center'>
+    <div className='collection-tabs flex w-full min-w-0 font-semibold'>
+        <div className='flex w-full items-center gap-2 overflow-x-auto border-b border-[#dfe6dc] pb-4'>
             {productType?.map((item)=>(
-              <button key={item?.title} className={`border font-sans border-gray-300 cursor-pointer text-sm md:text-base px-4 py-1.5 rounded-full hover:bg-black hover:text-white hoverEffect ${selectedTab === item.title && 'bg-black text-white'}`}
+              <button key={item?.title} className={`whitespace-nowrap cursor-pointer rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wider transition hover:bg-neutral-100 ${selectedTab === item.title && 'bg-neutral-950 text-white hover:bg-neutral-950'}`}
               onClick={()=>onTabSelect(item?.title)}
+              aria-pressed={selectedTab === item.title}
               >
                 {item?.title}
               </button>
             ))}
         </div>
-        <button className='border hidden md:block border-darkColor p-2 rounded-full hover:bg-black hover:text-white hoverEffect'>
-            <Repeat className='w-5 h-5'/>
-        </button>
     </div>
   )
 }

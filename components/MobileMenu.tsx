@@ -9,8 +9,8 @@ function MobileMenu({categories}:{categories:CATEGORIES_QUERYResult | undefined}
   return (
     <>
    
-    <button className="lg:hidden cursor-pointer" onClick={()=>setIsSideBar(!isSideBar)}>
-      <AlignLeft />
+    <button aria-label="Open navigation" className="icon-button cursor-pointer lg:hidden" onClick={()=>setIsSideBar(!isSideBar)}>
+      <AlignLeft className="size-5" />
     </button>
     <div className="lg:hidden ">
       <SideBar isOpen = {isSideBar} onClose = {()=> setIsSideBar(false)} categories={categories}/>

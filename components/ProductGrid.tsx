@@ -5,7 +5,7 @@ import { productType } from "@/constant";
 import { client } from "@/sanity/lib/client";
 import ProductCard from "./ProductCard";
 import NoProduct from "./NoProduct";
-import { Loader2 } from "lucide-react";
+import { Loader2, Sparkles } from "lucide-react";
 import { Product } from "@/sanity.types";
 
 // type Product = {
@@ -36,22 +36,27 @@ function ProductGrid() {
     fetchData();
   }, [selectedTab]);
   return (
-    <div className="mt-10 flex flex-col items-center  pb-10">
+    <section id="collection" className="mt-16 flex scroll-mt-28 flex-col items-center pb-16 sm:mt-20">
+      <div className="mb-8 flex w-full flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <div><p className="eyebrow mb-3 flex items-center gap-2"><Sparkles className="size-3.5" /> Discover your next favorite</p>
+        <h2 className="collection-heading">Fresh finds. Timeless feel.</h2></div>
+        <p className="max-w-xs text-sm leading-6 text-[#718077]">An easy refresh for your wardrobe.<br />Pick a mood. Make it yours.</p>
+      </div>
       <HomeTabBar selectedTab={selectedTab} onTabSelect={setSelectedTab} />
 
       {loading ? (
-        <div className="flex flex-col items-center justify-center py-10 text-center bg-gray-100 rounded-lg w-full mt-10 space-y-4 min-h-80 text-xl font-semibold">
-          <div className="flex gap-2 text-blue-600">
+        <div className="surface mt-10 flex min-h-80 w-full flex-col items-center justify-center space-y-4 py-10 text-center">
+          <div className="flex gap-2 text-sm font-semibold text-amber-700">
             <span>
               <Loader2 className="animate-spin"/>
             </span>
-            <span >Product is loading</span>
+            <span>Curating products...</span>
           </div>
         </div>
       ) : (
         <>
           {products?.length ? (
-            <div className="grid  md:grid-cols-3 lg:grid-cols-4  w-full items-center justify-center mt-10 gap-5 md:gap-8">
+            <div className="mt-10 grid w-full grid-cols-2 items-stretch gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
                 {products?.map((product: Product) => (
               <div key={product?._id} className="">
                 <ProductCard product={product} />
@@ -63,7 +68,7 @@ function ProductGrid() {
           )}
         </>
       )}
-    </div>
+    </section>
   );
 }
 

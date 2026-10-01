@@ -9,7 +9,7 @@ function HeaderMenu({categories}:{categories:CATEGORIES_QUERYResult | undefined}
   const path = usePathname();
 
   return (
-    <div className={`lg:inline-flex hidden gap-5`}>
+    <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:inline-flex">
       <Link href={'/'} className={`hover:text-black hoverEffect  relative group ${
             path === '/' ? "text-darkColor font-bold" : 'font-semibold'
           }`}>
@@ -50,7 +50,7 @@ function HeaderMenu({categories}:{categories:CATEGORIES_QUERYResult | undefined}
           <span />
         </Link>
       ))}
-    </div>
+    </nav>
   );
 }
 

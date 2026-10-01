@@ -12,20 +12,19 @@ import { Button } from "./ui/button";
 
 const NoAccessToCart = () => {
   return (
-    <div className="flex items-center py-12 md:py-32 bg-gray-100 p-4 justify-center ">
-      <Card className="w-full max-w-md">
+    <div className="flex items-center justify-center p-4 py-16 md:py-32">
+      <Card className="surface w-full max-w-md border-black/5 p-3">
         <CardHeader className="space-y-1">
           <div className="flex justify-center">
-            <Logo className="">Synzo</Logo>
+            <Logo className="text-2xl">Shynzo</Logo>
           </div>
           <CardTitle className="text-2xl font-bold text-center">
-            Wellcome Back!
+            Welcome back
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p>
-            Log in to view your cart items and checkout. Don&apos;t miss out on
-            you favorite products!
+          <p className="mb-5 text-center text-sm leading-6 text-neutral-500">
+            Sign in to view your bag and continue securely to checkout.
           </p>
           <SignInButton mode="modal">
             <Button className="w-full font-semibold" size="lg">

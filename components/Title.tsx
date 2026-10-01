@@ -7,7 +7,7 @@ interface Props {
 
 function Title({children,className} : Props) {
   return (
-    <div className={cn('text-2xl font-semibold ',className)}>
+    <div className={cn('text-3xl font-semibold tracking-[-0.035em] text-neutral-950',className)}>
         {children}
     </div>
   )

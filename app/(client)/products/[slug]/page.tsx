@@ -21,32 +21,33 @@ const singleProduct = async ({
     return notFound();
   }
   return (
-    <Container className="py-10 flex flex-col md:flex-row gap-10 ">
+    <Container className="flex flex-col gap-10 py-8 sm:py-12 md:flex-row lg:gap-16">
       {product?.images && <ImageView images={product.images} />}
 
-      <div className=" w-full md:w-1/2 font-sans">
-        <h1 className="text-3xl font-bold md:text-4xl">{product.name}</h1>
+      <div className="w-full py-2 md:w-1/2 lg:py-8">
+        <p className="eyebrow mb-3">{product.variants || "The Shynzo edit"}</p>
+        <h1 className="text-4xl font-semibold leading-tight tracking-[-0.045em] md:text-5xl">{product.name}</h1>
         {/* product price*/}
-        <div className="mt-3">
+        <div className="mt-5 text-xl">
           <PriceView price={product.price} discount={product.discount} />
         </div>
         <div className="mt-3">
           {product.stock !== 0 && (
-            <button className="px-4 py-2 bg-green-100 text-green-600 rounded-md font-semibold">
-              In Stock
-            </button>
+            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 before:size-1.5 before:rounded-full before:bg-emerald-500">
+              In stock
+            </span>
           )}
         </div>
-        <p className="text-lightColor mt-3 text-md">{product.description}</p>
+        <p className="mt-5 max-w-xl text-sm leading-7 text-neutral-600 sm:text-base">{product.description}</p>
         <div className="mt-7 flex gap-3">
           <AddtoCardButton product={product} />
-          <div className="border border-gray-300 flex justify-center items-center p-1 px-4 rounded-md">
+          <button aria-label="Add to favorites" className="icon-button size-11 shrink-0">
             <Heart />
-          </div>
+          </button>
         </div>
         <ProductCharacteristics product={product} />
 
-        <div className="grid grid-cols-2 border-t border-b py-8 md:grid-cols-3 gap-2 text-sm text-lighColor mt-3">
+        <div className="mt-6 grid grid-cols-2 gap-4 border-y border-black/10 py-6 text-sm text-neutral-600 md:grid-cols-3">
           <div className="flex gap-1.5 hover:text-red-400 items-center">
             <span></span>
             <h3>Compare color</h3>
@@ -65,14 +66,14 @@ const singleProduct = async ({
           </div>
         </div>
 
-        <div className="mt-6">
-          <div className="border-lighColor border rounded-md px-4 py-4  w-64 text-center">
-            <h1 className="text-darkColor font-semibold">Fee Shipping</h1>
-            <h2 className="text-lighColor text-sm">Free shipping over order BDT120</h2>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <div className="rounded-2xl border border-black/5 bg-white px-5 py-4">
+            <h3 className="font-semibold">Free shipping</h3>
+            <p className="mt-1 text-sm text-neutral-500">On orders over BDT 120</p>
           </div>
-          <div className="border-lighColor border rounded-md px-4 py-4 mt-7 w-64  text-center">
-            <h1 className="text-darkColor font-semibold">Flexible Payment</h1>
-            <h2 className="text-lighColor text-sm">Pay with Multiple Credit Cardts</h2>
+          <div className="rounded-2xl border border-black/5 bg-white px-5 py-4">
+            <h3 className="font-semibold">Flexible payment</h3>
+            <p className="mt-1 text-sm text-neutral-500">Multiple secure payment options</p>
           </div>
         </div>
       </div>

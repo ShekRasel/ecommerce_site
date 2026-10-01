@@ -50,16 +50,16 @@ function SearchBar() {
   return (
     <div className="font-sans">
       <Dialog open={showSearch} onOpenChange={() => setShowSearch(!showSearch)}>
-        <DialogTrigger onClick={() => setShowSearch(!showSearch)}>
-          <Search className="w-5 font-sans hover:text-black cursor-pointer hoverEffect" />
+        <DialogTrigger aria-label="Search products" className="icon-button" onClick={() => setShowSearch(!showSearch)}>
+          <Search className="size-4.5" />
         </DialogTrigger>
         <DialogContent className=" md:min-w-2xl lg:min-w-4xl font-sans min-h-[90vh] max-h-[90vh] flex flex-col overflow-hidden">
           <DialogHeader>
-            <DialogTitle className="mt-1">Product SearchBar</DialogTitle>
+            <DialogTitle className="mt-1 text-2xl font-semibold tracking-tight">Find something you’ll love</DialogTitle>
             <form className=" relative font-sans">
               <Input
-                placeholder="Search your product here"
-                className="flex-1 focus-visible:ring-0 rounded-md py-5"
+                placeholder="Search products..."
+                className="flex-1 rounded-xl border-black/10 bg-neutral-50 py-6 pl-4 focus-visible:ring-neutral-900"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -83,7 +83,7 @@ function SearchBar() {
               {loading ? (
                 <p className="flex items-center px-6 py-10 gap-1 font-semibold text-yellow-500">
                   <Loader2 className="w-5 h-5 animate-spin" />
-                  Searching on progress...
+                  Searching the collection...
                 </p>
               ) : products.length ? (
                 products?.map((product: Product) => (
@@ -138,7 +138,7 @@ function SearchBar() {
                   ) : (
                     <p className="text-green-600 flex text-center justify-center gap-2">
                       <Search />
-                      Search and explore your products from Synzo
+                      Search and explore products from Shynzo
                     </p>
                   )}
                 </div>

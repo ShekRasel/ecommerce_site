@@ -25,13 +25,13 @@ const SideBar: FC<sideBarProps> = ({ isOpen, onClose, categories }) => {
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <motion.div className="min-w-72 max-w-96 bg-darkColor h-full p-10 border-r border-r-white ">
+      <motion.div className="h-full w-[min(88vw,384px)] overflow-y-auto border-r border-white/15 bg-[#203e30] p-7">
         {/* Top - Logo & Close Button */}
         <div className="text-white flex justify-between items-center">
-          <button onClick={onClose}>
-            <Logo className="text-white font-extrabold italic">Shynzo</Logo>
-          </button>
-          <button className="hoverEffect cursor-pointer" onClick={onClose}>
+          <div onClick={onClose}>
+            <Logo className="text-2xl font-extrabold text-white">Shynzo</Logo>
+          </div>
+          <button aria-label="Close navigation" className="hoverEffect cursor-pointer rounded-full border border-white/20 p-2" onClick={onClose}>
             <X className="hoverEffect hover:text-red-400" />
           </button>
         </div>
