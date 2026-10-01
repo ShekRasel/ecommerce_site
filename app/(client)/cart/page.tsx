@@ -175,7 +175,7 @@ const CartPage = () => {
                       </div>
                       
 
-                      <Button className="w-full rounded-full font-semibold tracking-wide " size='lg'>Proceed to Checkout</Button>
+                      <Button asChild className="w-full rounded-full font-semibold tracking-wide" size="lg"><Link href="/checkout">Proceed to Checkout</Link></Button>
                       <Link href={'/'} className="flex justify-center items-center py-2 border border-darkColor rounded-full hover:border-black hover:bg-[#595858] hoverEffect">
                       
                       <Image height={30} width={30} src='/Paypal_2014_logo.png' alt="paypal logo"/>
